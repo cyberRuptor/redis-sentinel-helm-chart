@@ -1,7 +1,6 @@
 # Redis Sentinel Helm Chart
-<p align="center">
 ![redis](https://github.com/user-attachments/assets/193abfcd-1d28-4e42-8d8b-2eb668064e1d)
-</p>
+
 
 ## Introduction
 
@@ -12,11 +11,19 @@ This guide provides step-by-step instructions to deploy Redis Sentinel on a Kube
 Before you begin, ensure you have the following:
 - A Kubernetes cluster (v1.18+)
 - Helm (v3.0+)
+- The Image Pull Secret of the registry you are using and add the name of the secret in your service account inside values.yaml.
 
-## One-Time Setup (OTS) Installation Process
+```shell
+  serviceAccount:
+  imagePullSecrets:
+    name1: <name of your Image Pull Secret>
+```
+
+## Installation Process
 
 1. **Add the Helm Repository**
 
    ```sh
    helm repo add my-repo https://charts.example.com/
    helm repo update
+```
