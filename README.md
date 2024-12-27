@@ -34,9 +34,10 @@ Before you begin, ensure you have the following:
     service:
       type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
    ```
-   just define type as Headless for headless service type<br>
-                       ClusterIP for clusterIP service type<br>
-                  and  LoadBalancer for loadBalancer service type
+   just define type as
+   Headless for headless service type<br>
+   ClusterIP for clusterIP service type<br>
+   LoadBalancer for loadBalancer service type<br>
 
    -> To add the security context in your statefulsets<br>
      1. make the key options true
