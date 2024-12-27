@@ -2,7 +2,6 @@ namespace: redis-sentinel
 serviceAccount:
   imagePullSecrets:
     name1: docker-registry1-pull-secret
-    name2: docker-registry2-pull-secret
 
 
 redisSentinel:
