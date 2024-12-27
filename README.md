@@ -26,7 +26,7 @@ Before you begin, ensure you have the following:
    ```sh
    git clone https://github.com/cyberRuptor/redis-sentinel-helm-chart.git
    ```
-2. **Make changes inside values.yaml**
+2. **Make changes inside values.yaml**<br>
    Make the changes if you want to according to your use cases. Like resources, the Password for Redis inside the secret, and the Type of the service whether it is Headless, ClusterIP, or LoadBalancer. You can define your own security contexts also.
    
    -> To change the service type in any of the statefulset Master, Slave, and Sentinel.
@@ -34,11 +34,11 @@ Before you begin, ensure you have the following:
     service:
       type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
    ```
-   just define type as Headless for headless service type
-                       ClusterIP for clusterIP service type
+   just define type as Headless for headless service type<br>
+                       ClusterIP for clusterIP service type<br>
                   and  LoadBalancer for loadBalancer service type
 
-   -> To add the security context in your statefulsets
+   -> To add the security context in your statefulsets<br>
      1. make the key options true
       ```shell
         securityContext:
