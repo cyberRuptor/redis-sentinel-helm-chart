@@ -53,7 +53,7 @@ redisSentinel:
       requests:
         storage: 1Gi
   image:
-    repository: docker.io/library/redis:7.2.4
+    repository: redis:7.2.4
     pullPolicy: IfNotPresent
     tag: latest
   secret:
