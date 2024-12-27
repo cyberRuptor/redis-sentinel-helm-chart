@@ -1,8 +1,6 @@
 # Redis Sentinel Helm Chart
-![redis](https://github.com/user-attachments/assets/193abfcd-1d28-4e42-8d8b-2eb668064e1d)
-
 <p align="center">
-  <img src="(https://github.com/user-attachments/assets/193abfcd-1d28-4e42-8d8b-2eb668064e1d)" alt="Redis Sentinel on K8" />
+![redis](https://github.com/user-attachments/assets/193abfcd-1d28-4e42-8d8b-2eb668064e1d)
 </p>
 
 ## Introduction
