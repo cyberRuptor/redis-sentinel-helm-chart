@@ -38,15 +38,15 @@ Before you begin, ensure you have the following:
                        ClusterIP for clusterIP service type
                   and  LoadBalancer for loadBalancer service type
 
--> To add the security context in your statefulsets
-   1. make the key options true
+   -> To add the security context in your statefulsets
+     1. make the key options true
       ```shell
         securityContext:
            privileged: true  #make it true only when needs root privileges
            allowPrivilegeEscalation: true  #make it true only when needs root privileges
       ```
       
-   2. Also uncomment the keys inside the security context from every statefulsets.
+     2. Also uncomment the keys inside the security context from every statefulsets.
       ```shell
       securityContext:
           #privileged: {{ .Values.redisSentinel.securityContext.privileged }}
