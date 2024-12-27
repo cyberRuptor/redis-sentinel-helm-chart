@@ -21,9 +21,39 @@ Before you begin, ensure you have the following:
 
 ## Installation Process
 
-1. **Add the Helm Repository**
+1. **Clone the Helm Repository**
 
    ```sh
-   helm repo add my-repo https://charts.example.com/
-   helm repo update
-```
+   git clone https://github.com/cyberRuptor/redis-sentinel-helm-chart.git
+   ```
+2. **Make changes inside values.yaml**
+   Make the changes if you want to according to your use cases. Like resources, the Password for Redis inside the secret, and the Type of the service whether it is Headless, ClusterIP, or LoadBalancer. You can define your own security contexts also.
+   
+   -> To change the service type in any of the statefulset Master, Slave, and Sentinel.
+   ```shell
+    service:
+      type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
+   ```
+   just define type as Headless for headless service type
+                       ClusterIP for clusterIP service type
+                  and  LoadBalancer for loadBalancer service type
+
+-> To add the security context in your statefulsets
+   1. make the key options true
+      ```shell
+        securityContext:
+           privileged: true  #make it true only when needs root privileges
+           allowPrivilegeEscalation: true  #make it true only when needs root privileges
+      ```
+      
+   2. Also uncomment the keys inside the security context from every statefulsets.
+      ```shell
+      securityContext:
+          #privileged: {{ .Values.redisSentinel.securityContext.privileged }}
+      ```
+
+If one wants to deploy your Redis Sentinel via statefuleset standalone without using Helm Charts then one can follow the below link:-
+For documentation, please refer to <https://ot-redis-operator.netlify.app/>
+
+
+   
