@@ -21,14 +21,14 @@ redisSentinel:
         memory: "512Mi"
         cpu: "500m"
     service:
-      type: Headless    #set it as Headless if you need to run it in Headless form.
+      type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
       port: 6379
       loadBalancerIP: 
   slave:
     replicaCount: 2
     command: ["sh", "-c", "redis-server /usr/local/etc/redis/redis.conf --replicaof redis-master.redis-sentinel.svc.cluster.local 6379 --masterauth ${REDIS_PASSWORD} "]
     service:
-      type: Headless    #set it as Headless if you need to run it in Headless form.
+      type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
       port: 6379
   sentinel:
     replicaCount: 3
@@ -46,7 +46,7 @@ redisSentinel:
         memory: "256Mi"
         cpu: "200m"
     service:
-      type: Headless    #set it as Headless if you need to run it in Headless form.
+      type: Headless    #set it as LoadBalancer or ClusterIP if you need to create clusterIP service or to use load balancer for external connectivity.
       sentinelPort: 26379
   volumeClaimTemplates:
     accessModes: ["ReadWriteOnce"]
