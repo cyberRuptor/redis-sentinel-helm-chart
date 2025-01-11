@@ -15,8 +15,8 @@ Before you begin, ensure you have the following:
 
 ```shell
   serviceAccount:
-  imagePullSecrets:
-    name1: <name of your Image Pull Secret>
+    imagePullSecrets:
+      name1: <name of your Image Pull Secret>
 ```
 
 ## Installation Process
