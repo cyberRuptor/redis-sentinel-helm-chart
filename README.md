@@ -60,7 +60,12 @@ Before you begin, ensure you have the following:
       securityContext:
           #privileged: {{ .Values.redisSentinel.securityContext.privileged }}
       ```
+3. **Run the command to install helm chart**
+   ```sh
+       helm install redis-sentinel redis-sentinel-helm-chart
+   ```
 
+<br>
 If one wants to deploy your Redis Sentinel via statefulset standalone without using Helm Charts then one can follow the below link:-<br>
 For documentation, please refer to <br>https://medium.com/@cyberRuptor/deploying-redis-sentinel-as-a-cache-manager-on-k8-ocp-openshift-container-platform-2af64119d911
 
